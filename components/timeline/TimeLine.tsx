@@ -2,7 +2,10 @@
 import { Timeline, TimelineEffect, TimelineRow ,TimelineState} from '@xzdarcy/react-timeline-editor';
 import React ,{useRef,useState} from 'react'
 import "./timeline.css";
+import { FaBeer } from 'react-icons/fa';
+
 const defaultEditorData: TimelineRow[] = [
+
 {
     id: "0",
     actions: [
@@ -136,6 +139,8 @@ const TimeLine = (props: Props) => {
     const timelineState = useRef<TimelineState|null>(null);
     return (
       <div className="timeline-editor-example7">
+        <div className='flex flex-col'>
+          <div className='text-foreground-200 h-[42px]'>hello world</div>
         <div
           ref={domRef}
           style={{ overflow: 'overlay' }}
@@ -155,6 +160,7 @@ const TimeLine = (props: Props) => {
               </div>
             );
           })}
+        </div>
         </div>
         <Timeline
           ref={timelineState}
