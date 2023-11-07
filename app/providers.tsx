@@ -14,16 +14,10 @@ export interface ProvidersProps {
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 
-	const { theme, setTheme } = useTheme();
-	useEffect(() => {
-	  return () => {
-		setTheme("dark")
-	  }
-	}, [])
 	
 	return (
 		<NextUIProvider navigate={router.push}>
-			<NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+			<NextThemesProvider defaultTheme="dark"  {...themeProps}>{children}</NextThemesProvider>
 		</NextUIProvider>
 	);
 }

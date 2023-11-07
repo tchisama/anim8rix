@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 	},
 	description: siteConfig.description,
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
 	],
 	icons: {
@@ -38,7 +36,7 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+				<Providers  themeProps={{ attribute: "class"}}>
 					{children}
 				</Providers>
 			</body>
