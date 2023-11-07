@@ -6,7 +6,7 @@
   
   .timeline-editor-example7 .timeline-list {
     width: 300px;
-    height: 258px;
+    height: calc(200px - 42px);
     flex: 0 1 auto;
     overflow: overlay;
     padding: 0 10px;
@@ -29,11 +29,11 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
-    background-color: #333;
+    background-color: #33333344;
   }
   
   .timeline-editor-example7 .timeline-editor {
-    height: 300px;
+    height: 200px;
     flex: 1 1 auto;
   }
   
@@ -62,3 +62,4 @@
     border-radius: 10px;
   }
   
+  /* Handle on hover */

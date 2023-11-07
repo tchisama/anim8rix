@@ -1,4 +1,4 @@
-import TimeLine from "@/components/timeline/TimeLine";
+import TimeLine from "@/app/playground/layout/timeline/TimeLine";
 
 export default function Home() {
 	return (
