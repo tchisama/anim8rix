@@ -1,5 +1,6 @@
 import TimeLine from '@/app/playground/layout/timeline/TimeLine'
 import React from 'react'
+import Viewer from './layout/viewer/Viewer'
 
 type Props = {}
 
@@ -11,7 +12,7 @@ const page = (props: Props) => {
 
         </div>
         <div className='flex-1'>
-
+            <Viewer/>
         </div>
         </div> 
        <div className='flex'>
