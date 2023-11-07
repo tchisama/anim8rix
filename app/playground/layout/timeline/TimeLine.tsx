@@ -2,11 +2,10 @@
 import { Timeline, TimelineEffect, TimelineRow ,TimelineState} from '@xzdarcy/react-timeline-editor';
 import React ,{useRef,useState} from 'react'
 import "./timeline.css";
-import { FaBeer } from 'react-icons/fa';
-
+import { FaPlay , FaBackwardFast,FaForwardFast } from 'react-icons/fa6';
+import { Button } from '@nextui-org/react';
 const defaultEditorData: TimelineRow[] = [
-
-{
+  {
     id: "0",
     actions: [
       {
@@ -14,6 +13,12 @@ const defaultEditorData: TimelineRow[] = [
         start: 0,
         end: 2,
         effectId: "effect0",
+      },
+      {
+        id: "action01",
+        start: 1,
+        end: 3,
+        effectId: "effect1",
       },
     ],
   },
@@ -26,97 +31,8 @@ const defaultEditorData: TimelineRow[] = [
         end: 5,
         effectId: "effect1",
       }
-    ],
-}
-,
-{
-    id: "2",
-    actions: [
-      {
-        id: "action20",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
     ]
-},
-{
-    id: "3",
-    actions: [
-      {
-        id: "action30",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-},
-{
-    id: "4",
-    actions: [
-      {
-        id: "action40",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-},
-{
-    id: "5",
-    actions: [
-      {
-        id: "action50",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-}
-,
-{
-    id: "6",
-    actions: [
-      {
-        id: "action60",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-}
-,{
-    id: "7",
-    actions: [
-      {
-        id: "action70",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-},
-{
-    id: "8",
-    actions: [
-      {
-        id: "action80",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-}, {
-    id: "9",
-    actions: [
-      {
-        id: "action90",
-        start: 1.5,
-        end: 5,
-        effectId: "effect1",
-      }
-    ]
-}
+  }
 ]
 
 const mockEffect: Record<string, TimelineEffect> = {
@@ -138,9 +54,24 @@ const TimeLine = (props: Props) => {
     const domRef = useRef<HTMLDivElement|null>(null);
     const timelineState = useRef<TimelineState|null>(null);
     return (
+      <div className='w-full border-t bg-foreground-200 border-foreground-100'>
+
+        <div className='p-1 bg-foreground-50 px-4'>
+            <Button variant='light' isIconOnly>
+              <FaBackwardFast/>
+            </Button>
+            <Button variant='light' isIconOnly>
+              <FaPlay/>
+            </Button>
+            <Button variant='light' isIconOnly>
+              <FaForwardFast/>
+            </Button>
+        </div>
+
       <div className="timeline-editor-example7">
         <div className='flex flex-col'>
-          <div className='text-foreground-200 h-[42px]'>hello world</div>
+          <div className='text-foreground-200 h-[42px]'>
+          </div>
         <div
           ref={domRef}
           style={{ overflow: 'overlay' }}
@@ -174,6 +105,7 @@ const TimeLine = (props: Props) => {
             domRef.current.scrollTop = scrollTop;
           }}
         />
+      </div>
       </div>
     )
 }

@@ -14,6 +14,8 @@ const Page = (props: Props) => {
 	}, [setTheme])
   return (
     <div className='flex flex-col min-h-screen'>
+        <div className='h-[42px] bg-foreground-50 border-b border-foreground-100 '>
+        </div>
        <div className='flex flex-1'>
             <div className='w-[600px] bg-foreground-50 '>
                 <Controlers/>
@@ -21,9 +23,9 @@ const Page = (props: Props) => {
             <div className='flex-1 p-2'>
                 <Viewer/>
             </div>
-        </div> 
+        </div>
        <div className='flex'>
-           <TimeLine/> 
+           <TimeLine/>
        </div>
     </div>
   )
